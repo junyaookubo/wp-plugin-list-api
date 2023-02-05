@@ -23,13 +23,13 @@ function get_plugins_api() {
         foreach($plugins as $path => $plugin){
             if(is_plugin_active($path)){
                 $all[] = array(
-                    'site' => $_SERVER['SERVER_NAME'],
+                    'site' => get_option('home'),
                     'status' => true,
                     'name' => $plugin['Name']
                 );
             }else{
                 $all[] = array(
-                    'site' => $_SERVER['SERVER_NAME'],
+                    'site' => get_option('home'),
                     'status' => false,
                     'name' => $plugin['Name']
                 );
